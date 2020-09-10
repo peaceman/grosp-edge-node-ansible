@@ -1,0 +1,3 @@
+[submodule "ansible_collections/peaceman/grosp"]
+	path = ansible_collections/peaceman/grosp
+	url = https://github.com/peaceman/ansible-grosp

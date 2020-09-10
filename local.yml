@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: Install ansible
+      command: ./install-deps.sh
+    - include_role:
+        name: peaceman.shared_hosting.common
+    - include_role:
+        name: peaceman.grosp.consul

@@ -1,0 +1,9 @@
+---
+roles:
+  - src: jnv.unattended-upgrades
+    version: v1.8.0
+  - src: weareinteractive.ufw
+    version: 1.10.0
+
+collections:
+  - name: peaceman.shared_hosting
