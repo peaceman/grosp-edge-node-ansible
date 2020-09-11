@@ -1,0 +1,26 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - git
+  - python3-pip
+
+write_files:
+  - path: /root/consul-ca.pem
+    encoding: gz+b64
+    content: |
+      H4sIADhKWl8AA2WSu5KbMBhGe54ivccDBGyzRYpfSAZhkBHI186ALVbgG75gePp4N5k0+cozX3NmznD4HiIeZT9ckgg6pS4I8gWHWkQpksJ1ge8ltBSBpIt4wF3C7Lulm916Nij3tXKJb++MymlduaGz85b2yiDvf6sBhv20NboIwygS0M7xwmQ42L1Z/82w/McigLZQwJHMr2Wl5jGnSENy0UjOgUr2CZDy4+mD9nqXWyip/fuOCVypbFlAfMl+ui/r4Vc1Jlk+eTjb0BePu5Zbq6Q+VMtdPQtvcVf6zN8cwtYMVWl9CuPaus/R+tmu47Jn1uOWJV4D9vFDrLzMO9EOa+H0wWUqi2dkZrBcKa4QRGB7YC4K3BKkt/zLFZUKYiTZ0k8iBAeHIPGW576uRcj4c5Z8hVCyTE9+QwZRlm1J0h3cazA+3VLmlaKHGZLyrzvHINkZMKo1UCi4vMYTir2apvnkmQQhxOfOIeEVdLZi8faqisZ2dAONSlHdds2NOyyq4vUGUrfVRil3I47tdWeZQllBnqoMNePty6w/zMtxfnkWG9hDl04vl5d0ZlwYk2nQD0TQnArWCS06NHrWbX5p31kQhv9P5Tc/LjGuRwIAAA==
+  - path: /root/gossip.key
+    encoding: gz+b64
+    content: |
+      H4sIAHdKWl8AAyst8DD3KTNxLqxKikjJKXLySSlMyki3tQUAnhO9pxgAAAA=
+  - path: /root/extra-vars.yml
+    encoding: gz+b64
+    content: |
+      H4sIACm6W18AA3WQQW4DIQxF95yCCwypWnUzq94EOeBhUIw9wkyU3r7QJJXaarx8/+nbsIo2hoKzjUgNXGqOX99e3h1lvpggrDt5xXrF6lki6mysnSzQtv6VBz/jv46BE5Ry0J1ENW/+gp9+ydTvOFWRdrpj1/FTDPBLuNMpgNuwmAKZPFAGRfUjny3nWwfykUbmghQDoaBHhjNhnO0CpGg4Zb55VfJx3aBCeQjPPGBtPlXZt8fLjz/L9onSt/G3OmY6FBv9SCp7Db1TkZZJc2KM5gtVkvPOlwEAAA==
+
+runcmd:
+  - pip3 install ansible
+  - |
+    ansible-pull -U https://github.com/peaceman/grosp-edge-node-ansible \
+      -d /root/ansible-provisioning \
+      -e '@/root/extra-vars.yml'

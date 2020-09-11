@@ -1,0 +1,17 @@
+hostname: delta.gt.n2305.link
+consul_server_nodes:
+  - alpha.gt.n2305.link
+  - beta.gt.n2305.link
+  - gamma.gt.n2305.link
+consul_gossip_key_file: /root/gossip.key
+consul_ca_file: /root/consul-ca.pem
+mail_aliases_root: nixalio@gmail.com
+acme_enabled: false
+nginx_ssl_dhparam_enable: false
+cert_groups:
+  - name: delta.gt.n2305.link
+    domains:
+      - delta.gt.n2305.link
+    tls:
+      source: self-signed
+proxy_cache_upstream_url: https://static.at.n2305.link
