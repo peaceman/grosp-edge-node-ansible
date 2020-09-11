@@ -16,11 +16,12 @@ write_files:
   - path: /root/extra-vars.yml
     encoding: gz+b64
     content: |
-      H4sIACm6W18AA3WQQW4DIQxF95yCCwypWnUzq94EOeBhUIw9wkyU3r7QJJXaarx8/+nbsIo2hoKzjUgNXGqOX99e3h1lvpggrDt5xXrF6lki6mysnSzQtv6VBz/jv46BE5Ry0J1ENW/+gp9+ydTvOFWRdrpj1/FTDPBLuNMpgNuwmAKZPFAGRfUjny3nWwfykUbmghQDoaBHhjNhnO0CpGg4Zb55VfJx3aBCeQjPPGBtPlXZt8fLjz/L9onSt/G3OmY6FBv9SCp7Db1TkZZJc2KM5gtVkvPOlwEAAA==
+      H4sIAAjIW18AA3WQTW7EIAyF95yCC4RUrbrJqjdBHnAIGoMRJqPM7Us6P9JMFS/f+/T87IWlZUg4aY/UwIRm8ufXx7ehmM/KcZaVrGC9YLWZPcqktB40UFne4V0/4b+MXQ6Q0kF2YJFY7Bmvdo7Ue4yVuY032XT5ATp4AW7q4MAUTCpBJAsUQVDs7k86x60L/BN2zzhOClxCixlOhH7SM5CgyiHmzYqQ9UuBCukOPHyHtdlQeS33y4+fpft47tvyH7rPcAg2ekLCa3U9U5DmQWLI6FWpvF37yW5B21e3ir3ZWmnSS2u9yjhKgxadgZfkXwk2QaPOAQAA
 
 runcmd:
   - pip3 install ansible
+  - git clone --recursive https://github.com/peaceman/grosp-edge-node-ansible /root/ansible-provisioning
   - |
-    ansible-pull -U https://github.com/peaceman/grosp-edge-node-ansible \
-      -d /root/ansible-provisioning \
-      -e '@/root/extra-vars.yml'
+    cd /root/ansible-provisioning \
+    && ./install-deps.sh \
+    && ansible-playbook -e '@/root/extra-vars.yml' local.yml
