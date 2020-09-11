@@ -2,7 +2,18 @@
   tasks:
     - name: Install ansible
       command: ./install-deps.sh
-    - include_role:
+    - import_role:
         name: peaceman.shared_hosting.common
-    - include_role:
+    - import_role:
         name: peaceman.grosp.consul
+    - import_role:
+        name: peaceman.shared_hosting.server_nginx
+    - import_role:
+        name: peaceman.shared_hosting.app_system
+      vars:
+        username: proxycache
+    - import_role:
+        name: peaceman.shared_hosting.app_nginx
+      vars:
+        username: proxycache
+        template: proxycache.conf.j2
