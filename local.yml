@@ -17,6 +17,13 @@
         name: peaceman.grosp.consul
 
     - import_role:
+        name: peaceman.grosp.consul
+        tasks_from: consul_service_definition.yml
+      vars:
+        name: edge-node
+        template: edge-node-service.hcl.j2
+
+    - import_role:
         name: peaceman.grosp.nss
 
     - import_role:

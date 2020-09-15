@@ -1,0 +1,12 @@
+service {
+    id = "{{ hostname }}"
+    name = "edge"
+    meta {
+        edge_url = "https://{{ hostname }}"
+    }
+    check {
+        http = "https://{{ hostname }}/healthz"
+        interval = "2s"
+        timeout = "1s"
+    }
+}
