@@ -3,6 +3,10 @@
 proxy_cache_path /opt/segments levels=2:2 keys_zone=segments:10m inactive=10m min_free=2g;
 {% endblock %}
 {% block server_end %}
+location /healthz {
+    return 200 "🧩";
+}
+
 location / {
     proxy_cache segments;
     proxy_cache_lock on;
