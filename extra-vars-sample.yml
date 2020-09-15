@@ -8,13 +8,12 @@ consul_ca_file: /root/consul-ca.pem
 nss_ca_file: /root/nss-ca.pem
 nss_cert_file: /root/nss-cert.pem
 nss_cert_key_file: /root/nss-cert-key.pem
+
 mail_aliases_root: nixalio@gmail.com
 acme_enabled: false
+
 nginx_ssl_dhparam_enable: false
-cert_groups:
-  - name: delta.gt.n2305.link
-    domains:
-      - delta.gt.n2305.link
-    tls:
-      source: self-signed
+
+proxy_cache_cert_file: /root/proxy-cache.pem
+proxy_cache_cert_key_file: /root/proxy-cache-key.pem
 proxy_cache_upstream_url: https://static.at.n2305.link

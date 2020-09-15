@@ -29,6 +29,14 @@ write_files:
     encoding: gz+b64
     content: |
       H4sIANnIYF8AA3WRQW6EMAxF95wiFyBUrbph1ZtEnsSEaJwExaFibl/DDJVgRJbvP31bzpi5JojYK4dUQfuq0+fXx7emkO6NzYlnMozlF4tJ2SH3jVKtAprGs7zyG751rNhDjBfdPjOHydzxYYZAskdXcq7dE2vBu2jhIDxpa0FPGJvEfBYEHVIs9T0XeDTOe+xWK8FmRghkgAIwslmVXqWwCMg/fs20zbEBG9Fgghuh69UAxNgkH9JimMm4cYIC8SXs+TbelzxPrxtff4uS57JMS5u6vvZSrPQvcZ6LlU5GGloOPqFrppKXh9zOjmhkdC0om82FejXWKqt0HVeowWo4NP8Bh5WSGTgCAAA=
+  - path: /root/proxy-cache.pem
+    encoding: gz+b64
+    content: |
+
+  - path: /root/proxy-cache-key.pem
+    encoding: gz+b64
+    content: |
+
 
 runcmd:
   - pip3 install ansible

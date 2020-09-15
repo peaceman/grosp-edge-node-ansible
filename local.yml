@@ -32,3 +32,11 @@
       vars:
         username: proxycache
         template: proxycache.conf.j2
+        cert_groups:
+          - name: "{{ hostname }}"
+            domains:
+              - "{{ hostname }}"
+            tls:
+              source: provided
+              cert: "{{ lookup('file', proxy_cache_cert_file) }}"
+              key: "{{ lookup('file', proxy_cache_cert_key_file) }}"
