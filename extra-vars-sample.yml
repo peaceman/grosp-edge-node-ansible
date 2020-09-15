@@ -5,6 +5,9 @@ consul_server_nodes:
   - gamma.gt.n2305.link
 consul_gossip_key_file: /root/gossip.key
 consul_ca_file: /root/consul-ca.pem
+nss_ca_file: /root/nss-ca.pem
+nss_cert_file: /root/nss-cert.pem
+nss_cert_key_file: /root/nss-cert-key.pem
 mail_aliases_root: nixalio@gmail.com
 acme_enabled: false
 nginx_ssl_dhparam_enable: false

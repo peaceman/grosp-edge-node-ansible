@@ -13,10 +13,22 @@ write_files:
     encoding: gz+b64
     content: |
       H4sIAHdKWl8AAyst8DD3KTNxLqxKikjJKXLySSlMyki3tQUAnhO9pxgAAAA=
+  - path: /root/nss-ca.pem
+    encoding: gz+b64
+    content: |
+      H4sIAKLHYF8AA2WQyXKCQBiE7zxFXsASVFJ6yOH/Z4FBBxwWl9xkNVFjABXh6UNMVXJIH7/q7urqwaAXMku4T4T5oeCCQMi+4UCTQiB0BC8lUCgYgb2qieNFyezNot65iBIeX4thVbfLUfAOHAtZvW6g6d0Zb/RWkxRMGaq7S2Unu9Wuh90PE79MAjTzvzAVCkc8jsOrYZjabh84iNyyxmx9vRm6nTuZgGgxC26LzWyxX5YukQwaWmzpyteXoOwhgurXWpaEqaWBEaWsYThsFJcgEfJpY6uH2UPcMk6zFl3vsP9MA/dmGumBSD8op0cnG0qI+oL2ckzARSCHWF/Mj1l+yhWey9NuPKlKpFXrrfP7Jsl900tsq3M8/8NBI3pei7sJtNNS4te2uxYqH0f3QzKN63QSYrq0c33LYfuiPb5mLv3//xePmgJinAEAAA==
+  - path: /root/nss-cert.pem
+    encoding: gz+b64
+    content: |
+      H4sIAPLHYF8AA2WSTZOiMBCG7/yKvVsWiAhymEOHhJhxgwYIU3Dza+LyIaOyFeDXL2vVzmX7+HS/Vf2+3fP5VIhQFv0ISJyykAWQkr9wbnDG0GEMAohtBZohUEzuE9QMbnUfWjsPqplCDW63xVHtV1IjkeOtnWkOoDfXU2TwEvQuJRZPpRWN0vmYIB9fbPhmJaQ8JhrrHGdCYAzXuqDn+tj4lVGkcOcgKQxdfQJ+hQgvulhE+33vKSepe/AvMQHHvpqp1zdDIpDfRSSu8i+3dWg2WaAJR5zCQp6JEJzDPQhoVhV29vtoxzUH59XDmiBTCzLZDFsMZ6SibJNIYoQlSKTUAykSInHCIHK21TlCQm6mYY1hWju2UhAbEwHT8E8sHBIqIY3wNC5l0VEaO15UrMeP6jP6dWtgJ6eQ9EtcIqR02IKMPEYsN6H1gtnmLbMF60Nj+xhk7a2/0wWLwMMcds+nZ/Nuffic+aylYjbLats9LPvLzangcC+y96+zu7p5xhPic+npW2x18FhUcBLp+2ppNtfVw70UPpQJPfxU/oj125vxujyJ8P/f8AfkhGqoKgIAAA==
+  - path: /root/nss-cert-key.pem
+    encoding: gz+b64
+    content: |
+      H4sIAArIYF8AA9PVBQInV3dPP4WAIM8wxxBXBW/XSJCgLpevs4mzY6BjuVNgpIu3UVi5k7Onq6dfhKu+n5tLvmdVpUV4gatPQGSOd7anpVO+e2ZZknewfkhxhHaYaWhQan4UF9gYVz8XTKMBllQbAXcAAAA=
   - path: /root/extra-vars.yml
     encoding: gz+b64
     content: |
-      H4sIAAjIW18AA3WQTW7EIAyF95yCC4RUrbrJqjdBHnAIGoMRJqPM7Us6P9JMFS/f+/T87IWlZUg4aY/UwIRm8ufXx7ehmM/KcZaVrGC9YLWZPcqktB40UFne4V0/4b+MXQ6Q0kF2YJFY7Bmvdo7Ue4yVuY032XT5ATp4AW7q4MAUTCpBJAsUQVDs7k86x60L/BN2zzhOClxCixlOhH7SM5CgyiHmzYqQ9UuBCukOPHyHtdlQeS33y4+fpft47tvyH7rPcAg2ekLCa3U9U5DmQWLI6FWpvF37yW5B21e3ir3ZWmnSS2u9yjhKgxadgZfkXwk2QaPOAQAA
+      H4sIANnIYF8AA3WRQW6EMAxF95wiFyBUrbph1ZtEnsSEaJwExaFibl/DDJVgRJbvP31bzpi5JojYK4dUQfuq0+fXx7emkO6NzYlnMozlF4tJ2SH3jVKtAprGs7zyG751rNhDjBfdPjOHydzxYYZAskdXcq7dE2vBu2jhIDxpa0FPGJvEfBYEHVIs9T0XeDTOe+xWK8FmRghkgAIwslmVXqWwCMg/fs20zbEBG9Fgghuh69UAxNgkH9JimMm4cYIC8SXs+TbelzxPrxtff4uS57JMS5u6vvZSrPQvcZ6LlU5GGloOPqFrppKXh9zOjmhkdC0om82FejXWKqt0HVeowWo4NP8Bh5WSGTgCAAA=
 
 runcmd:
   - pip3 install ansible

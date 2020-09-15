@@ -2,14 +2,31 @@
   tasks:
     - import_role:
         name: peaceman.shared_hosting.common
+
+    - import_role:
+        name: geerlingguy.docker
+
+    - import_role:
+        name: geerlingguy.pip
+      vars:
+        pip_install_packages:
+          - name: docker
+          - name: docker-compose
+
     - import_role:
         name: peaceman.grosp.consul
+
+    - import_role:
+        name: peaceman.grosp.nss
+
     - import_role:
         name: peaceman.shared_hosting.server_nginx
+
     - import_role:
         name: peaceman.shared_hosting.app_system
       vars:
         username: proxycache
+
     - import_role:
         name: peaceman.shared_hosting.app_nginx
       vars:
