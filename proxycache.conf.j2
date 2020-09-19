@@ -12,6 +12,7 @@ location / {
     proxy_cache_lock on;
     proxy_cache_valid 15m;
     proxy_ignore_headers Vary Expires Cache-Control;
+    proxy_cache_key $scheme$proxy_host$uri;
     proxy_pass {{ proxy_cache_upstream_url }};
 }
 {% endblock %}
