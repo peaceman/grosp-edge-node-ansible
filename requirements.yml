@@ -8,6 +8,7 @@ roles:
     version: 2.0.0
   - src: geerlingguy.docker
     version: 2.8.2
+  - src: peaceman.elk
 
 collections:
   - name: peaceman.shared_hosting
