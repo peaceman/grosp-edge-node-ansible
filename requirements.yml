@@ -4,10 +4,7 @@ roles:
     version: v1.8.0
   - src: weareinteractive.ufw
     version: 1.10.0
-  - src: geerlingguy.pip
-    version: 2.0.0
-  - src: geerlingguy.docker
-    version: 2.8.2
+  - src: peaceman.docker
   - src: peaceman.elk
 
 collections:
