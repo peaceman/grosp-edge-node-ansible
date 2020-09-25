@@ -6,6 +6,8 @@ roles:
     version: 1.10.0
   - src: peaceman.docker
   - src: peaceman.elk
+  - src: cloudalchemy.node-exporter
+    version: 0.21.5
 
 collections:
   - name: peaceman.shared_hosting
