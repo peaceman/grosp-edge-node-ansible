@@ -1,4 +1,7 @@
 hostname: 0x3.gt.n2305.link
+node_group: foo
+node_state: foo
+
 consul_server_nodes:
   - alpha.gt.n2305.link
   - beta.gt.n2305.link

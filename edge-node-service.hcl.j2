@@ -1,9 +1,14 @@
 service {
     id = "edge-{{ hostname }}"
     name = "edge"
+    enable_tag_override = true
     meta {
         edge_url = "https://{{ hostname }}"
+        node_group = "{{ node_group }}"
     }
+    tags = [
+        "state={{ node_state }}"
+    ]
     check {
         http = "https://{{ hostname }}/healthz"
         interval = "2s"
