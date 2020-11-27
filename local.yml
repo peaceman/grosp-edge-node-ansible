@@ -19,27 +19,8 @@
     - import_role:
         name: peaceman.grosp.nss
 
-    - import_role:
-        name: peaceman.shared_hosting.server_nginx
-
-    - import_role:
-        name: peaceman.shared_hosting.app_system
-      vars:
-        username: proxycache
-
-    - import_role:
-        name: peaceman.shared_hosting.app_nginx
-      vars:
-        username: proxycache
-        template: proxycache.conf.j2
-        cert_groups:
-          - name: "{{ hostname }}"
-            domains:
-              - "{{ hostname }}"
-            tls:
-              source: provided
-              cert: "{{ lookup('file', proxy_cache_cert_file) }}"
-              key: "{{ lookup('file', proxy_cache_cert_key_file) }}"
+    - name: Install proxycache
+      import_tasks: proxycache.yml
 
     - import_role:
         name: peaceman.elk

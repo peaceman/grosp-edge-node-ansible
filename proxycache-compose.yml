@@ -1,0 +1,15 @@
+x-restart-policy: &restart-policy
+  restart: unless-stopped
+
+version: "2.4"
+services:
+  nginx:
+    image: peaceman/openresty-hmac:latest
+    <<: *restart-policy
+    network_mode: host
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $NGINX_CONFIG_DIR:/etc/nginx/conf.d
+      - $NGINX_CERTS_DIR:/ssl

@@ -1,0 +1,43 @@
+- name: Prepare folder for proxy-cache docker-compose project
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: true
+  loop:
+    - /opt/docker/proxy-cache
+    - /opt/docker/proxy-cache/conf.d
+    - /opt/docker/proxy-cache/certs
+
+- name: Add docker-compose.yml
+  copy:
+    src: proxycache-compose.yml
+    dest: /opt/docker/proxy-cache/docker-compose.yml
+
+- name: Genrate .env file for the docker-compose project
+  copy:
+    dest: /opt/docker/proxy-cache/.env
+    content: |
+      NGINX_CONFIG_DIR=./conf.d
+      NGINX_CERTS_DIR=./certs
+
+- name: Generate nginx config
+  template:
+    dest: /opt/docker/proxy-cache/conf.d/vhost.conf
+    src: proxycache.conf.j2
+
+- name: Copy certs
+  copy:
+    dest: "{{ item.dest }}"
+    content: "{{ item.content }}"
+  loop:
+    - dest: /opt/docker/proxy-cache/certs/cert.crt
+      content: "{{ lookup('file', proxy_cache_cert_file) }}"
+    - dest: /opt/docker/proxy-cache/certs/cert.key
+      content: "{{ lookup('file', proxy_cache_cert_key_file) }}"
+
+- name: Start proxy cache docker-compose project
+  docker_compose:
+    project_src: /opt/docker/proxy-cache
+    remove_orphans: true
+    pull: true
+    state: present
