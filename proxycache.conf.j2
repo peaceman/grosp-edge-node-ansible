@@ -44,8 +44,8 @@ server {
             local hmac = require "resty.hmac"
             local hmac_sha256 = hmac:new(ngx.var.hmac_secret, hmac.ALGOS.SHA256)
 
-            hmac_sha256:update(uri_args.e)
             hmac_sha256:update(ngx.var.uri)
+            hmac_sha256:update(uri_args.e)
 
             local calculated_hmac = ngx.encode_base64(hmac_sha256:final())
 

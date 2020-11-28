@@ -42,7 +42,7 @@
     pull: true
     state: present
 
-- name: UFW nss
+- name: UFW proxy cache
   include_role:
     name: weareinteractive.ufw
   vars:
